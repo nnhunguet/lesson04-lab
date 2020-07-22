@@ -3,11 +3,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { CommentOutlined, UserOutlined, UsergroupAddOutlined, PullRequestOutlined, LayoutOutlined  } from '@ant-design/icons';
 
-import Contacts from './screens/Contacts'
-import Groups from './screens/Groups';
-import Messages from './screens/Messages';
-import More from './screens/More';
-import Timeline from './screens/Timeline';
+import Contacts from './screens/ContactsScreen'
+import Groups from './screens/GroupsScreen';
+import Messages from './screens/MessagesScreen';
+import More from './screens/MoreScreen';
+import Timeline from './screens/TimelineScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -47,7 +47,7 @@ export default function App() {
           inactiveTintColor: 'gray',
         }}
       >
-        <Tab.Screen name="Messages" component={Messages} />
+        <Tab.Screen name="Messages" component={Messages} options={{ title: 'Messages' }}/>
         <Tab.Screen name="Contacts" component={Contacts} />
         <Tab.Screen name="Groups" component={Groups} />
         <Tab.Screen name="Timeline" component={Timeline} />
