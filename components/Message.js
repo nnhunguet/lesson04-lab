@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function Message(){
   return(
@@ -10,18 +10,17 @@ export default function Message(){
       />
       <View style={styles.wrapper}>
         <View style={styles.authorAndTime}>  
-          <Text>
+          <Text style={{fontWeight: "bold"}}>
             Hung
           </Text>
           <Text>
-            22h30
+            2:30 AM
           </Text>
         </View>
         <View>
           <Text style={styles.text}>
             Expo web is in beta, please report any bugs or missing features on the Expo repo.
-            You can follow the V1 release for more info: https://github.com/expo/expo/issues/6782   12314131
-            12314132112314133132123333333333333333333
+            You can follow the V1 release for more info: https://github.com/expo/expo/issues/6782
           </Text>
         </View>
       </View>
@@ -34,21 +33,34 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 100,
     flexDirection: "row",
-    backgroundColor: "#ccc",
+    backgroundColor: "#fff",
     alignItems: "center",
+    overflow: "hidden",
+    marginVertical: 12,
   },
   image: {
     height: 88,
     width: 88,
     resizeMode: "cover",
     borderRadius: 44,
+    borderColor: "black",
+    borderStyle: "solid",
+    borderWidth: 2,
   }, 
   wrapper: {
+    height: 100,
+    flex: 1,
+    marginHorizontal: 12,
+    justifyContent: "center",
   },
   authorAndTime: {
+    height: 20,
+    marginBottom: 6,
     flexDirection: "row",
     justifyContent: "space-between",
   },
   text: {
+    height: 60,
+    overflow: "hidden",
   }
 })
