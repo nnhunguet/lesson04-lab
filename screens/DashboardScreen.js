@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import DashboardScreen from '../components/Dashboard';
+import DetailScreen from '../screens/DetailScreen';
 const Stack = createStackNavigator();
 
 function NotificationScreen(){
@@ -38,6 +39,14 @@ export default function Dashboard({ navigation }) {
           }}
         />
         <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
+        <Stack.Screen 
+          name="DetailScreen" 
+          component={DetailScreen} 
+          options={{
+            headerTitle: "DetailScreen",
+            headerTitleAlign: "center",
+          }}
+        />
       </Stack.Navigator>
   );
 }

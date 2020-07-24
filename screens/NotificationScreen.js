@@ -4,16 +4,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-function NotificationScreen(){
+export default function NotificationScreen(){
   return(
     <Text style={{alignItems: "center", justifyContent: "center"}}>Notification</Text>
   )
-}
-
-export default function Notification() {
-  return (
-      <Stack.Navigator>
-      </Stack.Navigator>
-  );
 }
 

@@ -19,7 +19,7 @@ export default function Profile() {
           name="ProfileScreen" 
           component={ProfileScreen} 
           options={{
-            headerTitle: "Dashboard",
+            headerTitle: "Profile",
             headerTitleAlign: "center",
           }}
         />

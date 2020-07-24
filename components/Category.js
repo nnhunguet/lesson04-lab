@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const moment = require('moment');
@@ -30,20 +32,26 @@ function choiceColorCurrency(type) {
   return parseInt(type) === 1 ? "#FF958F" : parseInt(type) === 2 ? "#A254F2" : "#51EFDE";
 }
 
-export default function Category({item}) {
+export default function Category({item, navigation}) {
   let date = new Date(item.date_time);
   return(
-    <TouchableOpacity style={styles.container}> 
-      <View style={{ backgroundColor: choiceBackground(item.category), borderRadius: 10, padding: 20}}>
+    <TouchableOpacity style={styles.container}
+      onPress={() =>
+        navigation.push('DetailScreen', {
+          name: choiceName(item.category)
+        })
+      }
+    > 
+      <View style={{ backgroundColor: choiceBackground(item.category), borderRadius: 10, padding: 20,}}>
         <Image source={choiceImage(item.category)} style={{width: 30, height: 30, resizeMode: "contain",}}/>
       </View>
       <View style={styles.wrapText}>
         <View style={styles.textItem}>
-          <Text>{choiceName(item.category)}</Text>
-          <Text>{moment(date).fromNow()}</Text>
+          <Text style={{fontSize: 24, fontWeight: 500}}>{choiceName(item.category)}</Text>
+          <Text style={{color: "#A6B1C0"}}>{moment(date).fromNow()}</Text>
         </View>
         <View style={styles.textItem}>
-          <Text>Credit card</Text>
+          <Text style={{color: "#A6B1C0"}}>Credit card</Text>
           <Text style={{color: choiceColorCurrency(item.category)}}>{formatter.format(parseInt(item.spend_money))}</Text>
         </View>
       </View>
