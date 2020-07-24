@@ -9,7 +9,7 @@ import {
   Image,
 } from "react-native";
 
-const NotificationScren = () => {
+const NotificationScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.centeredView}>
@@ -36,15 +36,6 @@ const NotificationScren = () => {
           </View>
         </View>
       </Modal>
-
-      <TouchableHighlight
-        style={styles.openButton}
-        onPress={() => {
-          setModalVisible(true);
-        }}
-      >
-        <Text style={styles.textStyle}>Show Modal</Text>
-      </TouchableHighlight>
     </View>
   );
 };
@@ -88,4 +79,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+export default NotificationScreen;

@@ -5,13 +5,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import DashboardScreen from '../components/Dashboard';
 import DetailScreen from '../screens/DetailScreen';
+import NotificationScreen from '../screens/NotificationScreen';
 const Stack = createStackNavigator();
-
-function NotificationScreen(){
-  return(
-    <Text style={{alignItems: "center", justifyContent: "center"}}>Notification</Text>
-  )
-}
 
 export default function Dashboard({ navigation }) {
   return (
@@ -29,16 +24,16 @@ export default function Dashboard({ navigation }) {
             ),
             headerRight: () => (
               <TouchableOpacity
-                onPress={() => 
-                  navigation.navigate("NotificationScreen")
-                }
+                onPress={() => {
+                  navigation.navigate('NotificationScreen')
+                }}
               > 
                 <Image source={require('../assets/bell.png')} style={{width: 28, height: 28, resizeMode: "center", marginRight: 6}}/>
               </TouchableOpacity>
             ),
           }}
         />
-        <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
+        <Stack.Screen name="NotificationScreen" component={NotificationScreen}/>
         <Stack.Screen 
           name="DetailScreen" 
           component={DetailScreen} 
